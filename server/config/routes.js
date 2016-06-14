@@ -7,7 +7,7 @@ var users = require('../controllers/users.js');
 module.exports = function(app) {
 
   app.get('/', function (req,res) {
-    users.show(req, res);
+    users.show_all(req, res);
     //res.render('index');
     //console.log("empty");
   });
@@ -20,5 +20,7 @@ module.exports = function(app) {
     //console.log("post data: ", req);
     users.show_user(req,res);
   });
+
+  app.get('/remove/:name', function)
 
 }

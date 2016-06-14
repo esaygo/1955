@@ -24,7 +24,7 @@ module.exports = {
     });
   },
 
-  show: function(req, res) {
+  show_all: function(req, res) {
         User.find({}, function(err, users) {
           if(err) {
             console.log("error in find: ", err);
@@ -35,6 +35,17 @@ module.exports = {
             res.json(users);
           }
         });
+  },
+
+  show_user: function(req, res) {
+    User.findOne({name:req.params.name}, function(err, user) {
+      if(err){
+        console.log("error:", err);
+        res.json(err);
+      }else {
+        res.json(user);
+      }
+    })
   }
 
 
