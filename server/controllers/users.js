@@ -46,6 +46,17 @@ module.exports = {
         res.json(user);
       }
     })
+  },
+
+  remove_user: function(req, res) {
+    User.remove({name: req.params.name}, function(err, user) {
+      if(err){
+        console.log(err);
+        res.json(err);
+      } else{
+        res.redirect('/');
+      }
+    });
   }
 
 

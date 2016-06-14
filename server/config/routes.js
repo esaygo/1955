@@ -21,6 +21,8 @@ module.exports = function(app) {
     users.show_user(req,res);
   });
 
-  app.get('/remove/:name', function)
+  app.get('/remove/:name', function(req, res) {
+    users.remove_user(req,res);
+  });
 
 }
